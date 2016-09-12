@@ -19,7 +19,7 @@ ApplePay详细集成
 
 3.1 判断是否支持Apple Pay，如果支持又将支持哪些银行卡。
 
-```
+```Objective-C
     // 判断是否支持Apple Pay
     if (![PKPaymentAuthorizationViewController canMakePayments]) {
         
@@ -46,7 +46,7 @@ ApplePay详细集成
 
 3.2 如果没有绑定VISA卡或者银联卡时，点击支付按钮会跳转到绑卡页面
 
-```
+```Objective-C
 // 添加银行卡
 -(void)addPay{
     
@@ -57,7 +57,7 @@ ApplePay详细集成
 ```
 3.3 如果已经绑定银行卡，则去支付，并设置支付信息和商户信息
 
-```
+```Objective-C
 // 支付
 -(void)buy{
     
@@ -105,7 +105,7 @@ ApplePay详细集成
 
 3.4 实现支付的代理方法
 
-```
+```Objective-C
 -(void)paymentAuthorizationViewController:(PKPaymentAuthorizationViewController *)controller didAuthorizePayment:(PKPayment *)payment completion:(void (^)(PKPaymentAuthorizationStatus))completion{
     
     // 拿到支付信息发送给服务器，服务器处理完成后返回支付状态
