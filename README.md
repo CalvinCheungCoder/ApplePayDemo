@@ -3,7 +3,7 @@ ApplePay详细集成
 
 实现效果：
 
-![](https://github.com/CalvinCheungCoder/ApplePayDemo/blob/master/ApplePay04.png)
+![](https://github.com/CalvinCheungCoder/ApplePayDemo/blob/master/ApplePayDemo.gif)
 
 1.在Apple开发者中心配置 AppleID 和 Merchant IDs
 
