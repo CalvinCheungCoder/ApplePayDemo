@@ -92,7 +92,6 @@
 }
 
 #pragma mark -- PKPaymentAuthorizationViewControllerDelegate
-// 授权成功后调用
 -(void)paymentAuthorizationViewController:(PKPaymentAuthorizationViewController *)controller didAuthorizePayment:(PKPayment *)payment completion:(void (^)(PKPaymentAuthorizationStatus))completion{
     
     // 拿到支付信息发送给服务器，服务器处理完成后返回支付状态
