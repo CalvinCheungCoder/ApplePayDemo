@@ -63,13 +63,13 @@
     // 商户处理方式
     request.merchantCapabilities = PKMerchantCapability3DS;
     // 商品1
-    NSDecimalNumber *price = [NSDecimalNumber decimalNumberWithString:@"7999.00"];
+    NSDecimalNumber *price = [NSDecimalNumber decimalNumberWithString:@"0.01"];
     PKPaymentSummaryItem *item = [PKPaymentSummaryItem summaryItemWithLabel:@"iPhone 7" amount:price];
     // 商品2
-    NSDecimalNumber *price2 = [NSDecimalNumber decimalNumberWithString:@"149.00"];
+    NSDecimalNumber *price2 = [NSDecimalNumber decimalNumberWithString:@"0.01"];
     PKPaymentSummaryItem *item2 = [PKPaymentSummaryItem summaryItemWithLabel:@"iPhone数据线" amount:price2];
     // 商品汇总
-    NSDecimalNumber *price3 = [NSDecimalNumber decimalNumberWithString:@"8148.00"];
+    NSDecimalNumber *price3 = [NSDecimalNumber decimalNumberWithString:@"0.02"];
     PKPaymentSummaryItem *item3 = [PKPaymentSummaryItem summaryItemWithLabel:@"Apple Store" amount:price3];
     
     request.paymentSummaryItems = @[item,item2,item3];
@@ -94,15 +94,17 @@
 #pragma mark -- PKPaymentAuthorizationViewControllerDelegate
 -(void)paymentAuthorizationViewController:(PKPaymentAuthorizationViewController *)controller didAuthorizePayment:(PKPayment *)payment completion:(void (^)(PKPaymentAuthorizationStatus))completion{
     
-    // 拿到支付信息发送给服务器，服务器处理完成后返回支付状态
-    BOOL isSucess = YES;
+    completion(PKPaymentAuthorizationStatusSuccess);
     
-    if (isSucess) {
-        completion(PKPaymentAuthorizationStatusSuccess);
-    }else{
-        
-        completion(PKPaymentAuthorizationStatusFailure);
-    }
+    // 拿到支付信息发送给服务器，服务器处理完成后返回支付状态
+//    BOOL isSucess = YES;
+//    
+//    if (isSucess) {
+//        completion(PKPaymentAuthorizationStatusSuccess);
+//    }else{
+//        
+//        completion(PKPaymentAuthorizationStatusFailure);
+//    }
 }
 
 -(void)paymentAuthorizationViewControllerDidFinish:(PKPaymentAuthorizationViewController *)controller{
